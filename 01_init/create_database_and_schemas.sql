@@ -69,4 +69,4 @@ GO
 -- ========================================
 -- ✅ SETUP COMPLETE
 -- ========================================
-PRINT 'DataWarehouse setup complete: bronze, silver, gold schemas created.'; 
+PRINT 'DataWarehouse setup complete: bronze, silver, gold, and audit schemas created.';
