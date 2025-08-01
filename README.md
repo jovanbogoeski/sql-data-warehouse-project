@@ -63,8 +63,7 @@ sql-data-warehouse-project/
 │   └── data_model.png
 ├── LICENSE
 └── README.md
-
-
+```
 
 ---
 
@@ -111,4 +110,3 @@ All tools used in this project are freely available:
 6. Document architecture and source-to-target mappings
 
 ---
-
