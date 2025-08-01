@@ -64,48 +64,17 @@ sql-data-warehouse-project/
 ├── LICENSE
 └── README.md
 
+
+
 🔗 Tools & Technologies
 All tools used in this project are freely available:
 
-Datasets: Raw CSVs or source extract files
+Datasets: Raw CSVs or system export files
 
-SQL Server Express / PostgreSQL: Data warehouse host
+SQL Server Express / PostgreSQL: Data warehouse backend
 
 SQL IDE: SSMS, Azure Data Studio, or equivalent
 
-Draw.io (diagrams.net): For architecture and ER diagrams
+Draw.io (diagrams.net): For data flow, architecture, and ER diagrams
 
-Git / GitHub: Version control and documentation
-
-🧱 A. Data Engineering – Warehouse Build
-Objective: Design and deploy a modern data warehouse using SQL to consolidate ERP and CRM data, enabling analytics-ready datasets.
-
-Source Data: Two systems’ outputs (CRM & ERP), loaded as CSV or JSON
-
-Data Quality: Trim, deduplicate, handle missing values, and normalize in Silver
-
-Integration: Use consistent PK/FK keys to integrate sources into fact and dimension models in Gold
-
-Documentation: Provide clear README, diagrams, and metadata files for stakeholders
-
-📊 B. BI & Reporting – Analytics Layer
-Objective: Build insightful SQL-based analytics such as:
-
-Total and breakdown of sales trends over time
-
-Customer behavior analysis
-
-Product performance and maintenance reports
-
-📖 Workflow Overview
-Design tables via naming conventions and schema definitions
-
-Extract and load raw data into the Bronze layer
-
-Clean and enrich data in the Silver layer
-
-Build views or tables in Gold using joins on surrogate keys
-
-Validate results with data quality rules and test scripts
-
-Document architecture and source-to-target mappings
+Git / GitHub: Version control and documentation hosting
