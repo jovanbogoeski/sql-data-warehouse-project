@@ -9,7 +9,7 @@ This project implements a complete data warehouse solution using SQL, structured
 
 The project follows a **Medallion Architecture** design:
 
-> **Bronze → Silver → Gold** layers for progressively refining the raw data:
+> **Bronze → Silver → Gold** layers for progressively refining raw data:
 
 - **Bronze Layer**: Ingests raw source data directly from CSVs or APIs  
 - **Silver Layer**: Applies cleansing, standardization, normalization, and resolves quality issues  
@@ -30,83 +30,82 @@ This project includes:
 
 ## 🗂️ Project Structure
 
+```text
 sql-data-warehouse-project/
 ├── 01_init/
-│ └── create_database_and_schemas.sql
+│   └── create_database_and_schemas.sql
 ├── 02_bronze/
-│ ├── 01_create_bronze_tables.sql
-│ └── 02_load_bronze_procedure.sql
+│   ├── 01_create_bronze_tables.sql
+│   └── 02_load_bronze_procedure.sql
 ├── 03_silver/
-│ ├── 00_create_silver_tables.sql
-│ ├── 01_transform_crm_cust_info.sql
-│ ├── 02_transform_crm_prd_info.sql
-│ ├── 03_transform_crm_sales_details.sql
-│ ├── 04_transform_erp_cust_az12.sql
-│ ├── 05_transform_erp_px_cat_g1v2.sql
-│ └── 06_transform_erp_loc_a101.sql
+│   ├── 00_create_silver_tables.sql
+│   ├── 01_transform_crm_cust_info.sql
+│   ├── 02_transform_crm_prd_info.sql
+│   ├── 03_transform_crm_sales_details.sql
+│   ├── 04_transform_erp_cust_az12.sql
+│   ├── 05_transform_erp_px_cat_g1v2.sql
+│   └── 06_transform_erp_loc_a101.sql
 ├── 04_gold/
-│ └── 01_create_gold_views.sql
+│   └── 01_create_gold_views.sql
 ├── 05_audit/
-│ ├── create_audit_tables.sql
-│ └── seed_audit_config.sql
+│   ├── create_audit_tables.sql
+│   └── seed_audit_config.sql
 ├── 06_quality_checks/
-│ ├── 01_quality_checks_silver.sql
-│ └── 02_quality_checks_gold.sql
+│   ├── 01_quality_checks_silver.sql
+│   └── 02_quality_checks_gold.sql
 ├── datasets/
-│ ├── source_crm/
-│ └── source_erp/
+│   ├── source_crm/
+│   └── source_erp/
 ├── docs/
-│ ├── data_architecture.png
-│ ├── data_flow.png
-│ ├── data_integration.png
-│ └── data_model.png
+│   ├── data_architecture.png
+│   ├── data_flow.png
+│   ├── data_integration.png
+│   └── data_model.png
 ├── LICENSE
 └── README.md
 
-
----
-
-## 🔗 Tools & Technologies
-
+🔗 Tools & Technologies
 All tools used in this project are freely available:
 
-- **Datasets**: Raw CSVs or source extract files  
-- **SQL Server Express / PostgreSQL**: Your data warehouse host  
-- **SQL IDE**: Such as SSMS or Azure Data Studio  
-- **Draw.io (diagrams.net)**: For architecture, flow, and entity‑relationship diagrams  
-- **Git / GitHub**: Version control and documentation storage
+Datasets: Raw CSVs or source extract files
 
----
+SQL Server Express / PostgreSQL: Data warehouse host
 
-## 🧱 A. Data Engineering – Warehouse Build
+SQL IDE: SSMS, Azure Data Studio, or equivalent
 
-**Objective**: Design and deploy a modern data warehouse using SQL to consolidate ERP and CRM data, enabling analytics-ready datasets.
+Draw.io (diagrams.net): For architecture and ER diagrams
 
-- **Source Data**: Two systems’ outputs (CRM & ERP), loaded as CSV or JSON  
-- **Data Quality**: Trim, deduplicate, handle missing values, normalize in Silver layer  
-- **Integration**: Use consistent PK/FK keys to integrate sources into fact and dimension models in Gold  
-- **Documentation**: Provide clear README, diagrams, and metadata files for stakeholder clarity
+Git / GitHub: Version control and documentation
 
----
+🧱 A. Data Engineering – Warehouse Build
+Objective: Design and deploy a modern data warehouse using SQL to consolidate ERP and CRM data, enabling analytics-ready datasets.
 
-## 📊 B. BI & Reporting – Analytics Layer
+Source Data: Two systems’ outputs (CRM & ERP), loaded as CSV or JSON
 
-**Objective**: Build insightful SQL-based analytics such as:
+Data Quality: Trim, deduplicate, handle missing values, and normalize in Silver
 
-- Total and breakdown of **sales trends** over time  
-- **Customer behavior** analysis  
-- **Product performance** and **maintenance reports**
+Integration: Use consistent PK/FK keys to integrate sources into fact and dimension models in Gold
 
----
+Documentation: Provide clear README, diagrams, and metadata files for stakeholders
 
-## 📖 Workflow Overview
+📊 B. BI & Reporting – Analytics Layer
+Objective: Build insightful SQL-based analytics such as:
 
-1. Design tables via naming conventions and schema definitions  
-2. Extract and load raw data into **Bronze**  
-3. Clean and enrich data in the **Silver** layer  
-4. Build views or tables in **Gold** using joins on surrogate keys  
-5. Validate results with data quality rules and test scripts  
-6. Document architecture and source-to-target mappings
+Total and breakdown of sales trends over time
 
----
+Customer behavior analysis
 
+Product performance and maintenance reports
+
+📖 Workflow Overview
+Design tables via naming conventions and schema definitions
+
+Extract and load raw data into the Bronze layer
+
+Clean and enrich data in the Silver layer
+
+Build views or tables in Gold using joins on surrogate keys
+
+Validate results with data quality rules and test scripts
+
+Document architecture and source-to-target mappings
