@@ -66,15 +66,49 @@ sql-data-warehouse-project/
 
 
 
-🔗 Tools & Technologies
+---
+
+## 🔗 Tools & Technologies
+
 All tools used in this project are freely available:
 
-Datasets: Raw CSVs or system export files
+- **Datasets**: Raw CSVs or system export files  
+- **SQL Server Express / PostgreSQL**: Data warehouse backend  
+- **SQL IDE**: SSMS, Azure Data Studio, or equivalent  
+- **Draw.io (diagrams.net)**: For data flow, architecture, and ER diagrams  
+- **Git / GitHub**: Version control and documentation hosting
 
-SQL Server Express / PostgreSQL: Data warehouse backend
+---
 
-SQL IDE: SSMS, Azure Data Studio, or equivalent
+## 🧱 A. Data Engineering – Warehouse Build
 
-Draw.io (diagrams.net): For data flow, architecture, and ER diagrams
+**Objective**: Design and deploy a modern data warehouse using SQL to consolidate ERP and CRM data, enabling analytics-ready datasets.
 
-Git / GitHub: Version control and documentation hosting
+- **Source Data**: Two systems’ outputs (CRM & ERP), loaded as CSV or JSON  
+- **Data Quality**: Trim, deduplicate, handle missing values, and normalize in Silver  
+- **Integration**: Use consistent PK/FK keys to integrate sources into fact and dimension models in Gold  
+- **Documentation**: Provide clear README, diagrams, and metadata files for stakeholders
+
+---
+
+## 📊 B. BI & Reporting – Analytics Layer
+
+**Objective**: Build insightful SQL-based analytics such as:
+
+- Total and breakdown of **sales trends** over time  
+- **Customer behavior** analysis  
+- **Product performance** and **maintenance reports**
+
+---
+
+## 📖 Workflow Overview
+
+1. Design tables via naming conventions and schema definitions  
+2. Extract and load raw data into the **Bronze** layer  
+3. Clean and enrich data in the **Silver** layer  
+4. Build views or tables in **Gold** using joins on surrogate keys  
+5. Validate results with data quality rules and test scripts  
+6. Document architecture and source-to-target mappings
+
+---
+
